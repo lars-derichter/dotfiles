@@ -14,6 +14,7 @@ xcode-select --install
 
 # 1password
 brew cask install 1password-cli
+eval $(op signin <subdomain>.1password.com <email>)
 
 # chezmoi
 brew install chezmoi
