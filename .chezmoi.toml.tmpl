@@ -1,5 +1,8 @@
-{{- $fullname := promptString "Your full name" -}}
-{{- $email := promptString "Your email address" -}}
+{{- $preferredhostname := promptString "What should be the hostname for this system?"
+{{- $fullname := promptString "What is your full name" -}}
+{{- $email := promptString "What is your email address" -}}
 [data]
-	email = "{{ $email }}"
+	preferredhostname = "{{ $preferredhostname }}"
 	fullname = "{{ $fullname }}"
+	email = "{{ $email }}"
+	
