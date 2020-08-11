@@ -4,7 +4,7 @@
 expect -c "spawn gpg --edit-key 472D6B4D6F760DD88F480E54306A874F98AFF064 trust quit; send \"5\ry\r\"; expect eof"
 rm ~/.gnupg/private.key
 
-echo "Check if key is shown with ultimate trust and correct identity"
+echo "\nCheck if key is shown with ultimate trust and correct identity"
 /usr/local/bin/gpg --list-keys
 
 # (re)start gpg-agent
