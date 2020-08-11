@@ -1,7 +1,7 @@
 #!/bin/sh
 
 /usr/local/bin/gpg --import ~/.gnupg/private.key
-expect -c "spawn gpg --edit-key 306A874F98AFF064 trust quit; send \"5\ry\r\"; expect eof"
+expect -c "spawn gpg --edit-key {{ .gpgkey }} trust quit; send \"5\ry\r\"; expect eof"
 rm ~/.gnupg/private.key
 
 echo "\nCheck if key is shown with ultimate trust and correct identity"
