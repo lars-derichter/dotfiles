@@ -19,6 +19,9 @@ eval $(op signin my.1password.com <email>)
 # chezmoi
 brew install chezmoi
 chezmoi init https://github.com/lars-derichter/dotfiles.git
+
+# Check defaults in $HOME/.local/share/chezmoi/.chezmoi.toml.tmpl
+
 chezmoi apply
 
 ```
