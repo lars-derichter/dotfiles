@@ -115,3 +115,7 @@ export LANG=en_GB.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status"
+
+# Hide the “user@hostname” info when you’re logged in as yourself on your
+# local machine
+prompt_context(){}
