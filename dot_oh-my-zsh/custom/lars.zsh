@@ -10,8 +10,8 @@ alias dl="cd ~/Downloads"
 alias odl="open ~/Downloads"
 alias pg="cd ~/Projects-Github"
 alias opg="open ~/Projects-Github"
-alias ic="cd ~/Library/Mobile Documents/com~apple~CloudDocs" # iCloud Drive
-alias oic="open ~/Library/Mobile Documents/com~apple~CloudDocs" # iCloud Drive
+alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs" # iCloud Drive
+alias oic="open ~/Library/Mobile\ Documents/com~apple~CloudDocs" # iCloud Drive
 alias tm="cd ~/OneDrive\ -\ Thomas\ More"
 alias otm="open ~/OneDrive\ -\ Thomas\ More"
 
