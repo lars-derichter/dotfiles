@@ -1,5 +1,8 @@
 # Some more aliases and functions that I like
 
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
 ##
 #  FILESYSTEM
 ##
