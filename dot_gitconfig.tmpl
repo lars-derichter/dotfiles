@@ -1,7 +1,11 @@
 [commit]
 	gpgsign = true
 [core]
+{{- if eq .chezmoi.os "darwin" }}
 	editor = code --wait
+{{- else if eq .chezmoi.os "linux" }}
+	editor = nano
+{{ end }}
 [user]
 	name = {{ .fullname }}
 	email = {{ .email }}
