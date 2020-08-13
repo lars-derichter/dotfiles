@@ -78,7 +78,7 @@ plugins=(
     alias-finder
     brew
     common-aliases
-    gitfast 
+    gitfast
     git
     git-extras
     gitignore
@@ -100,7 +100,7 @@ export LANG=en_GB.UTF-8
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nano'
  else
-   export EDITOR='code'
+   export EDITOR='code --wait'
  fi
 
 # Compilation flags
@@ -114,7 +114,6 @@ export LANG=en_GB.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias gs="git status"
 
 # Hide the “user@hostname” info when you’re logged in as yourself on your
 # local machine
