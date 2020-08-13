@@ -1,6 +1,8 @@
+[commit]
+	gpgsign = true
+[core]
+	editor = code --wait
 [user]
 	name = {{ .fullname }}
 	email = {{ .email }}
 	signingkey = {{ .gpgkey }}
-[commit]
-	gpgsign = true
