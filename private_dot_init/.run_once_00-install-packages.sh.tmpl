@@ -68,7 +68,11 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
 # java
 brew cask install "oracle-jdk"
 brew cask install "oracle-jdk-javadoc"
+brew install "openjdk@11"
 brew install "jenv"
+
+jenv add /Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home/
+jenv add /usr/local/opt/openjdk@11/
 
 # editor
 brew cask install "visual-studio-code"
