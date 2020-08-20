@@ -12,6 +12,7 @@ brew tap "homebrew/core"
 brew tap "homebrew/cask-versions"
 brew tap "homebrew/cask-fonts"
 brew tap "buo/cask-upgrade"
+brew tap "homebrew/cask-drivers"
 brew tap "lars-derichter/mycasks"
 
 ##################
@@ -58,6 +59,17 @@ brew cask install "iterm2"
 brew cask install "font-source-code-pro-for-powerline"
 brew cask install "font-fira-code-nerd-font"
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
+
+####################
+#     Hardware     #
+####################
+
+{{ if eq chezmoi.hostname "Mithrandir" -}}
+brew cask install "logitech-control-center"
+brew cask install "logitech-camera-settings"
+brew cask install "logitech-presentation"
+brew cask install "karabiner-elements"
+{{- end }}
 
 #######################
 #     Development     #
