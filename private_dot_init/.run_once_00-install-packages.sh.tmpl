@@ -68,7 +68,6 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
 brew cask install "logitech-control-center"
 brew cask install "logitech-camera-settings"
 brew cask install "logitech-presentation"
-brew cask install "karabiner-elements"
 {{- end }}
 
 #######################
@@ -152,6 +151,8 @@ brew cask install "setapp"
 #     Manual Installs    #
 ##########################
 
+{{ if eq chezmoi.hostname "Mithrandir" -}}
 echo "Don't forget to install:\n\nSmart Scroll (https://www.marcmoini.com/sx_en.html)"
+{{- end }}
 
 {{ end -}}
