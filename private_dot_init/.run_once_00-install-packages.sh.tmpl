@@ -88,6 +88,11 @@ brew install "jenv"
 jenv add /Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home/
 jenv add /usr/local/opt/openjdk@11/
 
+# javascript/node
+brew install "nvm"
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+nvm install node
+
 # diagramming tools
  brew cask install "staruml"
 
@@ -96,6 +101,7 @@ brew cask install "visual-studio-code"
 
 # IDEs
 brew cask install "intellij-idea"
+brew cask install "webstorm"
 
 # git & git-tools
 brew install "git"

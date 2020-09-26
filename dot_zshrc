@@ -86,6 +86,7 @@ plugins=(
     jenv
     osx
     z
+    zsh-nvm
 )
 
 source $ZSH/oh-my-zsh.sh
