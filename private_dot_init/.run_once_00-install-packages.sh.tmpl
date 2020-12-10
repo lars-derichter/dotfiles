@@ -127,11 +127,14 @@ brew cask install "idagio"
 brew cask install "tidal"
 
 # video
+brew cask install "4k-video-downloader"
 brew cask install "handbrake"
 brew cask install "vlc"
 
-# video editing
+# video recording and editing
 mas install 408981434 # iMovie
+brew cask install "obs"
+brew cask install "obs-virtualcam"
 
 #######################
 #     Productivity    #
@@ -143,6 +146,7 @@ brew cask install "microsoft-teams"
 #mas install 985367838 # Outlook
 brew cask install "skype-for-business"
 mas install 1147396723 # WhatsApp
+brew cask install "zoom"
 
 # time management
 brew cask install "rescuetime"
@@ -177,7 +181,7 @@ brew cask install "setapp"
 ##########################
 
 {{ if eq chezmoi.hostname "Mithrandir" -}}
-echo "Don't forget to install:\n\nSmart Scroll (https://www.marcmoini.com/sx_en.html)"
+echo ""
 {{- end }}
 
 {{ end -}}
