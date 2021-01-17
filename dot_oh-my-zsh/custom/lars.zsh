@@ -61,7 +61,7 @@ alias firefox='/Applications/Firefox.app/Contents/MacOS'
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+alias flush="dscacheutil -flushcache"
 
 ##
 #  VISUAL STUDIO CODE
