@@ -68,7 +68,7 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
 ####################
 
 {{ if eq chezmoi.hostname "Mithrandir" -}}
-brew install --cask "logitech-control-center"
+brew install --cask "logitech-options"
 brew install --cask "logitech-camera-settings"
 brew install --cask "logitech-presentation"
 {{- end }}
@@ -94,7 +94,7 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 nvm install node
 
 # diagramming tools
- brew install --cask "staruml"
+brew install --cask "staruml"
 
 # editors
 brew install --cask "visual-studio-code"
@@ -133,6 +133,7 @@ brew install --cask "vlc"
 
 # video recording and editing
 mas install 408981434 # iMovie
+mas install 921553264 # Screenium 3
 brew install --cask "obs"
 brew install --cask "obs-virtualcam"
 
