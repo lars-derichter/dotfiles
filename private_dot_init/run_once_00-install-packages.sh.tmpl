@@ -25,13 +25,14 @@ brew install "zsh"
 # fix privileges for zsh completions
 chmod go-w "$(brew --prefix)/share"
 
+# this part gives trouble
 # switch to using brew-installed zsh as default shell
-if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/zsh;
-fi;
+#if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
+#  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+#  chsh -s /usr/local/bin/zsh;
+#fi;
 # and start using it now
-exec /"$(brew --prefix)/bin/zsh -l"
+#exec /"$(brew --prefix)/bin/zsh -l"
 
 # ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
