@@ -3,7 +3,7 @@ My dot files and configuration managed with [chezmoi](https://www.chezmoi.io).
 
 ## macOS
 
-Run these commands to initialize on macOS.
+On a new install first login to the App Store then run these commands to initialize on macOS.
 
 ```Shell
 # Xcode command line tools
