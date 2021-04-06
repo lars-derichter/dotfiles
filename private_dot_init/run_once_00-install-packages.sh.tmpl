@@ -67,11 +67,9 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
 #     Hardware     #
 ####################
 
-{{ if eq chezmoi.hostname "Olorin" -}}
 brew install --cask "logitech-options"
 brew install --cask "logitech-camera-settings"
 brew install --cask "logitech-presentation"
-{{- end }}
 
 #######################
 #     Development     #
@@ -184,8 +182,6 @@ brew install --cask "setapp"
 #     Manual Installs    #
 ##########################
 
-{{ if eq chezmoi.hostname "Mithrandir" -}}
-echo ""
-{{- end }}
+
 
 {{ end -}}
