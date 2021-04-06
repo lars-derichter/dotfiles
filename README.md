@@ -13,7 +13,7 @@ xcode-select --install
 /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # 1password
-brew cask install 1password-cli
+brew install --cask 1password-cli
 eval $(op signin my.1password.com <email>)
 
 # chezmoi
