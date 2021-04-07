@@ -22,15 +22,15 @@ brew tap "lars-derichter/mycasks"
 # more recent zsh
 brew install "zsh"
 
+# fix privileges for zsh completions
+chmod g-w,o-w "$(brew --prefix)/share/zsh"
+chmod g-w,o-w "$(brew --prefix)/share/zsh/site-functions"
+
 # ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # starship prompt
 brew install "starship"
-
-# fix privileges for zsh completions
-chmod g-w,o-w "$(brew --prefix)/share/zsh"
-chmod g-w,o-w "$(brew --prefix)/share/zsh/site-functions"
 
 # gnu system utilities
 brew install "coreutils"
