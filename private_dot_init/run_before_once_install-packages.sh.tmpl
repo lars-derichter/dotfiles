@@ -22,23 +22,15 @@ brew tap "lars-derichter/mycasks"
 # more recent zsh
 brew install "zsh"
 
-# fix privileges for zsh completions
-chmod go-w "$(brew --prefix)/share"
-
-# this part gives trouble
-# switch to using brew-installed zsh as default shell
-#if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-#  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
-#  chsh -s /usr/local/bin/zsh;
-#fi;
-# and start using it now
-#exec /"$(brew --prefix)/bin/zsh -l"
-
 # ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # starship prompt
 brew install "starship"
+
+# fix privileges for zsh completions
+chmod go-w "$(brew --prefix)/share"
+chmod go-w "$(brew --prefix)/share/zsh"
 
 # gnu system utilities
 brew install "coreutils"
