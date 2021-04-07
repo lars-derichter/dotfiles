@@ -29,8 +29,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 brew install "starship"
 
 # fix privileges for zsh completions
-chmod go-w "$(brew --prefix)/share"
-chmod go-w "$(brew --prefix)/share/zsh"
+chmod g-w,o-w "$(brew --prefix)/share/zsh"
+chmod g-w,o-w "$(brew --prefix)/share/zsh/site-functions"
 
 # gnu system utilities
 brew install "coreutils"
