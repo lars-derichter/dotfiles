@@ -84,7 +84,7 @@ plugins=(
     gitignore
     gnu-utils
     jenv
-    osx
+    macos
     z
     zsh-nvm
 )
