@@ -106,6 +106,11 @@ function vcd() {
 }
 
 ##
+# Todoist CLI
+##
+source $(brew --prefix)/share/zsh/site-functions/_todoist_peco
+
+##
 #  MISC
 ##
 
