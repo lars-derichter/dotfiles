@@ -27,9 +27,6 @@ brew install "zsh"
 chmod g-w,o-w "$(brew --prefix)/share/zsh"
 chmod g-w,o-w "$(brew --prefix)/share/zsh/site-functions"
 
-# ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # ohmyzsh Nord Theme
 git clone https://github.com/fxbrit/nord-extended $ZSH/themes/nord-extended
 
@@ -204,4 +201,8 @@ mas install 417375580 # BetterSnapTool
 ##########################
 
 
+
+
+# ohmyzsh must be last bacause of change in environment after install
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 {{ end -}}
