@@ -26,4 +26,8 @@ chezmoi apply
 
 ```
 
+## Todo
+
+Fix 1password-cli integration
+
 
