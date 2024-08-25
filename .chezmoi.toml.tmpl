@@ -5,7 +5,6 @@
 	preferredhostname = "{{ $preferredhostname }}"
 	fullname = "{{ $fullname }}"
 	email = "{{ $email }}"
-	gpg1puuid = "soharkziyvetleqovjby4d74wy" # 1Password uuid for my gpg private key
-	gpgkey = "306A874F98AFF064" # id of my gpg key
-	sshpriv1puuid = "i72xbkg4cfaqzhysdvzwwbytdy" # 1Password uuid for my ssh private key
-	sshpub1puuid = "tgfyd77zhnawbkmj5y3v5kc3xe" # 1Password uuid for my ssh public key
+
+[hooks.read-source-state.pre]
+    command = ".local/share/chezmoi/.install-password-manager.sh"

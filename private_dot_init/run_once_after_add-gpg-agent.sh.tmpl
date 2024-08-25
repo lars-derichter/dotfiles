@@ -1,7 +1,11 @@
 #!/bin/sh
 
+{{- if eq .chezmoi.os "darwin" -}}
+eval $(op signin --account $SUBDOMAIN)
+{{- end -}}
+
 /usr/local/bin/gpg --import ~/.gnupg/private.key
-expect -c "spawn gpg --edit-key {{ .gpgkey }} trust quit; send \"5\ry\r\"; expect eof"
+expect -c "spawn gpg --edit-key 306A874F98AFF064 trust quit; send \"5\ry\r\"; expect eof"
 rm ~/.gnupg/private.key
 
 echo "\nCheck if key is shown with ultimate trust and correct identity"
@@ -10,3 +14,5 @@ echo "\nCheck if key is shown with ultimate trust and correct identity"
 # (re)start gpg-agent
 killall gpg-agent
 gpg-agent --daemon
+
+echo "gpg-agent installed"
