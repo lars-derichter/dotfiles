@@ -1,4 +1,5 @@
 # dotfiles
+
 My dot files and configuration managed with [chezmoi](https://www.chezmoi.io).
 
 ## macOS
@@ -12,10 +13,6 @@ xcode-select --install
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# 1password
-brew install --cask 1password-cli
-eval $(op signin) # Then manually add account
-
 # chezmoi
 brew install chezmoi
 chezmoi init https://github.com/lars-derichter/dotfiles.git
@@ -28,11 +25,9 @@ chezmoi apply
 
 ## Afterwards
 
-- In iTerm2 settings: `Load iterm settings from ~/.iterm2` and `Save changes automatically`
-- In 1password settings:  `Use the SSH-Agent` and `Integrate with 1password-cli`
+- In iTerm2 settings: `Load iterm settings from ~/.iterm2` and `Save changes automatically` (should happen automatically)
+- In 1password settings: `Use the SSH-Agent` and `Integrate with 1password-cli`
 
 ## Todo
 
 Fix 1password-cli integration for gpg-key
-
-
