@@ -28,7 +28,10 @@ chmod g-w,o-w "$(brew --prefix)/share/zsh"
 chmod g-w,o-w "$(brew --prefix)/share/zsh/site-functions"
 
 # ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# ohmyzsh Nord Theme
+git clone https://github.com/fxbrit/nord-extended $ZSH/themes/nord-extended
 
 # starship prompt
 brew install "starship"
@@ -69,6 +72,11 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
 #     Development     #
 #######################
 
+# git & git-tools
+brew install "git"
+brew install "git-lfs"
+brew install "git-extras"
+
 # programming languages
 
 # java
@@ -91,11 +99,6 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
 # IDEs
 #brew install "intellij-idea"
 #brew install "webstorm"
-
-# git & git-tools
-brew install "git"
-brew install "git-lfs"
-brew install "git-extras"
 
 # browsers
 #brew install "firefox"
