@@ -14,7 +14,7 @@ xcode-select --install
 
 # 1password
 brew install --cask 1password-cli
-eval $(op signin my.1password.com <email>)
+eval $(op signin) # Then manually add account
 
 # chezmoi
 brew install chezmoi
