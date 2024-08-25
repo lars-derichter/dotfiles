@@ -48,7 +48,10 @@ brew install "tldr"
 brew install "iterm2"
 brew install "font-source-code-pro-for-powerline"
 brew install "font-fira-code-nerd-font"
+# iterm settings from ~/.iterm2
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
+# read them
+defaults write "com.googlecode.iterm2" "LoadPrefsFromCustomFolder" '1'
 
 
 #####################
@@ -58,6 +61,7 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
 brew install "1password"
 brew install "alfred"
 mas install 417375580 # BetterSnapTool
+
 
 
 #######################
@@ -71,6 +75,11 @@ brew install "git-extras"
 
 # editor
 brew install "visual-studio-code"
+
+# golang
+brew install golang
+# plistwatch utility depends on golang
+go install  github.com/catilac/plistwatch@latest
 
 
 ###################
