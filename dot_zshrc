@@ -10,6 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="agnoster"
+ZSH_THEME="nord-extended/nord"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -28,7 +29,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -126,3 +127,7 @@ eval "$(starship init zsh)"
 
 # 1Password SSH-agent
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+# Dircolors
+test -r ~/.dir_colors && eval $(gdircolors -b ~/.dir_colors)
+LSCOLORS=$LS_COLORS
