@@ -16,6 +16,7 @@ brew tap "buo/cask-upgrade"
 brew tap "lars-derichter/mycasks"
 brew tap sachaos/todoist
 
+
 ##################
 #     System     #
 ##################
@@ -26,9 +27,6 @@ brew install "zsh"
 # fix privileges for zsh completions
 chmod g-w,o-w "$(brew --prefix)/share/zsh"
 chmod g-w,o-w "$(brew --prefix)/share/zsh/site-functions"
-
-# ohmyzsh Nord Theme
-git clone https://github.com/fxbrit/nord-extended $ZSH/themes/nord-extended
 
 # starship prompt
 brew install "starship"
@@ -56,14 +54,16 @@ brew install "iterm2"
 brew install "font-source-code-pro-for-powerline"
 brew install "font-fira-code-nerd-font"
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
+echo "Do not forget to load iterm prefs from ~/.iterm2"
 
-####################
-#     Hardware     #
-####################
 
-#brew install "logitech-options"
-#brew install "logitech-camera-settings"
-#brew install "logitech-presentation"
+#####################
+#     Utilities     #
+#####################
+
+brew install 1password
+mas install 417375580 # BetterSnapTool
+
 
 #######################
 #     Development     #
@@ -74,134 +74,13 @@ brew install "git"
 brew install "git-lfs"
 brew install "git-extras"
 
-# programming languages
 
-# java
-#brew install "oracle-jdk"
-#brew install "oracle-jdk-javadoc"
-#brew install "openjdk@11"
-#brew install "jenv"
+###################
+#     OHMyZSH     #
+###################
 
-# javascript/node
-#brew install "nvm"
-#git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
-#nvm install node
-
-# diagramming tools
-#brew install "staruml"
-
-# editors
-#brew install "visual-studio-code"
-
-# IDEs
-#brew install "intellij-idea"
-#brew install "webstorm"
-
-# browsers
-#brew install "firefox"
-#brew install "google-chrome"
-
-# (s)-ftp client
-#brew install "cyberduck"
-
-# virtual machines
-#brew install "virtualbox"
-
-###############
-#     Media   #
-###############
-
-# books
-#brew install "kindle"
-
-# image/photo editing
-#brew install "imageoptim"
-
-# audio
-#brew install "spotify"
-
-# audio recording and editing
-#brew install "audacity"
-#brew install "audio-hijack"
-#brew install "farrago"
-#brew install "fission"
-#brew install "loopback"
-#brew install "waves-central"
-
-# video
-#brew install "4k-video-downloader"
-#brew install "handbrake"
-#brew install "vlc"
-
-# video recording and editing
-#mas install 408981434 # iMovie
-#mas install 921553264 # Screenium 3
-#brew install "obs"
-#brew install "obs-virtualcam"
-
-#######################
-#     Productivity    #
-#######################
-
-# communication
-#mas install 1176895641 # Spark
-##brew install "microsoft-teams"
-#mas install 985367838 # Outlook
-#brew install "skype-for-business"
-#mas install 1147396723 # WhatsApp
-#brew install "zoom"
-
-# time management
-#brew install "rescuetime"
-#brew install "itsycal"
-#mas install 585829637 # "Todoist"
-#brew install todoist
-#brew install peco
-
-# notes
-#mas install 1091189122 # Bear
-#mas install 420212497 # Byword
-#brew install "obsidian"
-#brew install zotero
-
-# office
-#brew install "deckset"
-#mas install 823766827 # Onedrive
-#mas install 462058435 # Microsoft Excel
-#mas install 462062816 # Microsoft PowerPoint
-#mas install 462054704 # Microsoft Word
-
-# writing
-#brew install "basictex"
-#brew install "pandoc"
-#brew install "scrivener"
-
-# utilities
-#mas install 1432731683 # AdBlock Plus
-#brew install "alfred"
-#brew install "atext"
-mas install 417375580 # BetterSnapTool
-# brew install "ccleaner"
-#mas install 671736912 # FruitJuice - Battery Health
-#brew install keyboard-maestro
-#brew install "hazel"
-#brew install "keycastr"
-#brew install "nordvpn"
-#mas install 445189367 # PopClip
-
-#################
-#     Gaming    #
-#################
-
-#brew install "gog-galaxy"
-#brew install "steam"
-
-##########################
-#     Manual Installs    #
-##########################
-
-
-
+# ohmyzsh Nord Theme
+git clone https://github.com/fxbrit/nord-extended $ZSH/themes/nord-extended
 
 # ohmyzsh must be last bacause of change in environment after install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
