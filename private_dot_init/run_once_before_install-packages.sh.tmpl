@@ -77,9 +77,10 @@ brew install "visual-studio-code"
 #     OHMyZSH     #
 ###################
 
+# ohmyzsh starts a new session after install
+echo "\n\n\nType exit when OHMyZSH starts running to complete chezmoi configuration\n\n\n"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # ohmyzsh Nord Theme
 git clone https://github.com/fxbrit/nord-extended $ZSH/themes/nord-extended
-
-# ohmyzsh must be last bacause of change in environment after install
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 {{ end -}}
