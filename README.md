@@ -10,7 +10,7 @@ On a new install first login to the App Store, install 1Password and then run th
 xcode-select --install
 
 # Homebrew
-/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # 1password
 brew install --cask 1password-cli
