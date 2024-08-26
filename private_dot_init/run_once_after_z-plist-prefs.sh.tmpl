@@ -14,5 +14,32 @@ defaults write "com.googlecode.iterm2" "LoadPrefsFromCustomFolder" '1'
 # Theme: Auto (instead of light)
 defaults write "Apple Global Domain" "AppleInterfaceStyleSwitchesAutomatically" '1'
 
+# Dock
+defaults write "com.apple.dock" "largesize" '16'
+defaults write "com.apple.dock" "magnification" '1'
+defaults write "com.apple.dock" "autohide" '1'
+defaults write "com.apple.dock" "expose-group-apps" '1'
+
+# Hot Corners
+defaults write "com.apple.dock" "wvous-tl-corner" '4' # desktop
+defaults write "com.apple.dock" "wvous-tl-modifier" '0'
+
+defaults write "com.apple.dock" "wvous-tr-corner" '2' # mission control
+defaults write "com.apple.dock" "wvous-tr-modifier" '0'
+
+defaults write "com.apple.dock" "wvous-bl-corner" '13' # lock screen
+defaults write "com.apple.dock" "wvous-bl-modifier" '0'
+
+defaults write "com.apple.dock" "wvous-br-corner" '3' # Application windows
+defaults write "com.apple.dock" "wvous-br-modifier" '0'
+
+# fn key shows emoji keyboard
+defaults write "com.apple.HIToolbox" "AppleFnUsageType" '2'
+
+# trackpad
+defaults write "Apple Global Domain" "com.apple.trackpad.scaling" '"1.5"' # faster
+defaults write "com.apple.AppleMultitouchTrackpad" "Clicking" '1' # tap to click
+defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "Clicking" '1' # tap to click
+defaults write "com.apple.dock" "showAppExposeGestureEnabled" '1' # app expose down three fingers
 
 {{ end -}}
