@@ -76,8 +76,10 @@ DISABLE_UPDATE_PROMPT="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     alias-finder
+    asdf
     brew
     common-aliases
+    direnv
     gitfast
     git-extras
     gitignore
@@ -123,6 +125,11 @@ eval "$(starship init zsh)"
 
 # 1Password SSH-agent
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+# aliasfinder
+zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
+zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
+zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 # Dircolors
 test -r ~/.dir_colors && eval $(gdircolors -b ~/.dir_colors)
