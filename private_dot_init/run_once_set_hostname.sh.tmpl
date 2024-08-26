@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Set the hostname using the chezmoi variable
+scutil --set HostName "{{ .preferredhostname }}"
+scutil --set LocalHostName "{{ .preferredhostname }}"
+scutil --set ComputerName "{{ .preferredhostname }}"
+
+# Optionally, update the /etc/hosts file
+sudo sed -i '' "s/^127\.0\.0\.1.*/127.0.0.1       {{ .preferredhostname }}.local {{ .preferredhostname }}/" /etc/hosts
