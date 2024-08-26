@@ -18,12 +18,13 @@ brew install chezmoi
 chezmoi init https://github.com/lars-derichter/dotfiles.git
 
 # Check defaults in $HOME/.local/share/chezmoi/.chezmoi.toml.tmpl
-
 chezmoi apply
 
 ```
 
 ## Afterwards
 
-- In 1password settings: `Use the SSH-Agent` and `Integrate with 1password-cli`
+- in 1password settings: `Use the SSH-Agent` and `Integrate with 1password-cli`
+- login to vscode to sync settings
+- login to setapp and install favourite apps
 
