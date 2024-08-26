@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if ! asdf which python &>/dev/null; then
+  echo "asdf is not managing Python. Configuring asdf for Python..."
+
+  # Add the Python plugin to asdf if it doesn't already exist
+  asdf plugin-add python || true
+
+  # Install the latest Python version
+  asdf install python latest
+
+  # Set the installed Python version as the global version
+  asdf global python latest
+
+  echo "Python has been installed and set globally via asdf."
+else
+  echo "asdf is already managing Python."
+fi
