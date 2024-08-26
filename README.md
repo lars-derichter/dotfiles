@@ -25,9 +25,5 @@ chezmoi apply
 
 ## Afterwards
 
-- In iTerm2 settings: `Load iterm settings from ~/.iterm2` and `Save changes automatically` (should happen automatically)
 - In 1password settings: `Use the SSH-Agent` and `Integrate with 1password-cli`
 
-## Todo
-
-Fix 1password-cli integration for gpg-key
