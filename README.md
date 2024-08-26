@@ -25,6 +25,6 @@ chezmoi apply
 ## Afterwards
 
 - in 1password settings: `Use the SSH-Agent` and `Integrate with 1password-cli`
-- login to vscode to sync settings
+- login to vscode (using Github) to sync settings
 - login to setapp and install favourite apps
 
