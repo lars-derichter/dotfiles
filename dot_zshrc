@@ -127,3 +127,6 @@ export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 # Dircolors
 test -r ~/.dir_colors && eval $(gdircolors -b ~/.dir_colors)
 LSCOLORS=$LS_COLORS
+
+# My PATH
+export PATH="$HOME/bin:$HOME/go/bin:$PATH"
