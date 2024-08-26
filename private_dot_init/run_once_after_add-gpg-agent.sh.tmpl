@@ -1,12 +1,27 @@
 #!/bin/sh
 
-echo "gpg-agent install"
 
-echo "import"
+# [TODO: if ever necessary create function for Linux or Windows]
+# [TODO: extract script]
+{{ if eq .chezmoi.os "darwin" -}}
+# Function to install a package if it's not installed
+install_if_missing() {
+    local package=$1
+    if ! command -v $package &>/dev/null; then
+        echo "$package is not installed. Installing..."
+        brew install $package
+    else
+        echo "$package is already installed."
+    fi
+}
+{{- end }}
+
+# Ensure gnu-go is installed
+install_if_missing "1password-cli"
+install_if_missing "gnupg"
+
 /usr/local/bin/gpg --import ~/.gnupg/private.key
-echo "spawn"
 expect -c "spawn gpg --edit-key 306A874F98AFF064 trust quit; send \"5\ry\r\"; expect eof"
-echo "rm"
 rm ~/.gnupg/private.key
 
 echo "\nCheck if key is shown with ultimate trust and correct identity"
@@ -15,5 +30,3 @@ echo "\nCheck if key is shown with ultimate trust and correct identity"
 # (re)start gpg-agent
 killall gpg-agent
 gpg-agent --daemon
-
-echo "gpg-agent installed"
