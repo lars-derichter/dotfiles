@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Ask for admin password upfront
+sudo -v
+
+# Check if Homebrew is installed
+if ! command -v brew &>/dev/null; then
+    echo "Homebrew is not installed. Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "Homebrew installed."
+fi
+
+# Install packages from Brewfile
+if [ -f "$HOME/Brewfile" ]; then
+    brew bundle --file="$HOME/Brewfile"
+fi
+
+# fix privileges for zsh completions
+chmod g-w,o-w "$(brew --prefix)/share/zsh"
+chmod g-w,o-w "$(brew --prefix)/share/zsh/site-functions"
+
+# plistwatch
+go install  github.com/catilac/plistwatch@latest
+
+# ohmyzsh Nord Theme
+git clone https://github.com/fxbrit/nord-extended $HOME/.oh-my-zsh/themes/nord-extended
+
+# ohmyzsh starts a new session after install
+echo "\n\n\nType exit when OHMyZSH starts running to complete chezmoi configuration\n\n\n"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
