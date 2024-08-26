@@ -12,8 +12,8 @@ brew "git"
 brew "git-extras"
 brew "git-lfs"
 brew "gnu-sed"
-brew "gnupg"
 brew "go"
+brew "gpg"
 brew "mas"
 brew "moreutils"
 brew "pinentry-mac"
@@ -33,4 +33,3 @@ cask "visual-studio-code"
 
 # Mas
 mas "BetterSnapTool", id: 417375580
-@

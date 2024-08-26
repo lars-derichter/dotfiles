@@ -16,12 +16,11 @@ install_if_missing() {
 }
 {{- end }}
 
-# Ensure gnu-go is installed
-install_if_missing "1password-cli"
-install_if_missing "gnupg"
+# Ensure gnupg is installed
+install_if_missing "gpg"
 
 /usr/local/bin/gpg --import ~/.gnupg/private.key
-expect -c "spawn gpg --edit-key 306A874F98AFF064 trust quit; send \"5\ry\r\"; expect eof"
+expect -c "spawn gpg --edit-key {{ .gpg_key_id }} trust quit; send \"5\ry\r\"; expect eof"
 rm ~/.gnupg/private.key
 
 echo "\nCheck if key is shown with ultimate trust and correct identity"
