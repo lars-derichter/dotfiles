@@ -1,0 +1,16 @@
+{{ if eq .chezmoi.os "darwin" -}}
+
+# computername
+#[TODO: use template]
+defaults write "com.apple.rapport" "familySyncedName" 'Olorin'
+
+# iterm settings from ~/.iterm2
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
+# read them
+defaults write "com.googlecode.iterm2" "LoadPrefsFromCustomFolder" '1'
+
+# Theme: Auto (instead of light)
+defaults write "Apple Global Domain" "AppleInterfaceStyleSwitchesAutomatically" '1'
+
+
+{{ end -}}
