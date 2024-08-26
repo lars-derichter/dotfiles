@@ -37,8 +37,10 @@ cask "microsoft-excel"
 cask "microsoft-powerpoint"
 cask "microsoft-teams"
 cask "microsoft-word"
+cask "obsidian"
 cask "onedrive"
 cask "setapp"
+cask "todoist"
 cask "visual-studio-code"
 
 # Mas
