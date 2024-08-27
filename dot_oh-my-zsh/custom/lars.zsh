@@ -16,27 +16,27 @@ alias tm="cd ~/OneDrive\ -\ Thomas\ More"
 alias otm="open ~/OneDrive\ -\ Thomas\ More"
 
 # ld lars digital files
-alias ld="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld"
-alias old="open ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld"
-## area
-ldafunction() {
-	pushd ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld/${1}*
-}
-export ldafunction
-## category
-ldcfunction() {
-	pushd ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld/*/${1}*
-}
-export ldcfunction
-## item
-ldifunction() {
-	pushd ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld/*/*${1}*
-}
-export ldifunction
+# alias ld="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld"
+# alias old="open ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld"
+# ## area
+# ldafunction() {
+# 	pushd ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld/${1}*
+# }
+# export ldafunction
+# ## category
+# ldcfunction() {
+# 	pushd ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld/*/${1}*
+# }
+# export ldcfunction
+# ## item
+# ldifunction() {
+# 	pushd ~/Library/Mobile\ Documents/com~apple~CloudDocs/0-ld/*/*${1}*
+# }
+# export ldifunction
 
-alias lda='ldafunction'
-alias ldc='ldcfunction'
-alias ldi='ldifunction'
+# alias lda='ldafunction'
+# alias ldc='ldcfunction'
+# alias ldi='ldifunction'
 
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
