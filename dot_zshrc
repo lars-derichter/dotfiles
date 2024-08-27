@@ -136,5 +136,8 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 test -r ~/.dir_colors && eval $(gdircolors -b ~/.dir_colors)
 LSCOLORS=$LS_COLORS
 
+# asdf direnv
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
 # My PATH
 export PATH="$HOME/bin:$HOME/go/bin:$PATH"
