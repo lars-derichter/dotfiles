@@ -80,6 +80,7 @@ plugins=(
     brew
     common-aliases
     direnv
+    git
     gitfast
     git-extras
     gitignore
