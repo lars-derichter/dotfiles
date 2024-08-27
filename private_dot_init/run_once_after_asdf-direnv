@@ -1,3 +1,11 @@
 #!/bin/sh
 
-asdf plugin-add direnv
+# if asdf direnv is not installed, install and configure it
+if ! asdf which python &>/dev/null; then
+    asdf plugin-add direnv
+    asdf install direnv latest
+    asdf global direnv latest
+    echo "asdf direnv has been installed and set globally via asdf."
+else    
+    echo "asdf direnv is already installed."
+fi
