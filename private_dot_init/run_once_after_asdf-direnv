@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # if asdf direnv is not installed, install and configure it
-if ! asdf which python &>/dev/null; then
+if ! asdf which direnv &>/dev/null; then
     asdf plugin-add direnv
     asdf install direnv latest
     asdf global direnv latest
