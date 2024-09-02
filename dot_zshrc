@@ -139,5 +139,8 @@ LSCOLORS=$LS_COLORS
 # asdf direnv
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
+# asdf java
+source $HOME/.asdf/plugins/java/set-java-home.zsh
+
 # My PATH
 export PATH="$HOME/bin:$HOME/go/bin:$PATH"
