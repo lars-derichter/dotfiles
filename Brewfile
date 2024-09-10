@@ -45,6 +45,7 @@ cask "postman"
 cask "setapp"
 cask "todoist"
 cask "visual-studio-code"
+cask "whatsapp"
 
 # Mas
 mas "BetterSnapTool", id: 417375580
