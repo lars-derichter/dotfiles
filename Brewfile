@@ -50,3 +50,4 @@ cask "whatsapp"
 
 # Mas
 mas "BetterSnapTool", id: 417375580
+mas "Pages", id: 409201541
