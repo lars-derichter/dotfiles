@@ -28,6 +28,7 @@ brew "zsh"
 cask "1password"
 cask "1password-cli"
 cask "alfred"
+cask "claude"
 cask "font-fira-code-nerd-font"
 cask "font-source-code-pro-for-powerline"
 cask "google-chrome"
@@ -52,3 +53,4 @@ cask "whatsapp"
 # Mas
 mas "BetterSnapTool", id: 417375580
 mas "Pages", id: 409201541
+mas "NordVPN", id: 905953485
