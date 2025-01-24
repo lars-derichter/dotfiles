@@ -13,8 +13,8 @@ brew "git"
 brew "git-extras"
 brew "git-lfs"
 brew "gnu-sed"
+brew "gnupg"
 brew "go"
-brew "gpg"
 brew "mas"
 brew "moreutils"
 brew "pandoc"
@@ -30,6 +30,8 @@ cask "1password-cli"
 cask "alfred"
 cask "claude"
 cask "font-fira-code-nerd-font"
+cask "font-playwrite-be-vlg"
+font "font-playwrite-be-vlg-guides"
 cask "font-source-code-pro-for-powerline"
 cask "google-chrome"
 cask "imageoptim"
@@ -46,11 +48,13 @@ cask "onedrive"
 cask "parallels"
 cask "postman"
 cask "setapp"
+cask "steam"
 cask "todoist"
 cask "visual-studio-code"
 cask "whatsapp"
 
 # Mas
 mas "BetterSnapTool", id: 417375580
-mas "Pages", id: 409201541
+mas "Kindle", id: 302584613
 mas "NordVPN", id: 905953485
+mas "Pages", id: 409201541
