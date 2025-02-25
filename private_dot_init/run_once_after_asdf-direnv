@@ -4,7 +4,7 @@
 if ! asdf which direnv &>/dev/null; then
     asdf plugin-add direnv
     asdf install direnv latest
-    asdf global direnv latest
+    asdf set -u direnv latest
     echo "asdf direnv has been installed and set globally via asdf."
 else    
     echo "asdf direnv is already installed."

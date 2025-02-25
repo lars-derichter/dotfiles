@@ -4,7 +4,7 @@
 if ! asdf which java &>/dev/null; then
     asdf asdf plugin-add java https://github.com/halcyon/asdf-java.git
     asdf install java latest:adoptopenjdk-13
-    asdf global java latest:adoptopenjdk-13
+    asdf set -u java latest:adoptopenjdk-13
     echo "asdf java adoptopenjdk-13 has been installed and set globally via asdf."
 else    
     echo "asdf java is already installed."

@@ -10,7 +10,7 @@ if ! asdf which python &>/dev/null; then
   asdf install python latest
 
   # Set the installed Python version as the global version
-  asdf global python latest
+  asdf set -u python latest
 
   echo "Python has been installed and set globally via asdf."
 else
