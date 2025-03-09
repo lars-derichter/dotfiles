@@ -6,6 +6,7 @@
 {{- else if eq .chezmoi.os "linux" }}
 	editor = nano
 {{ end }}
+	autocrlf = input
 [user]
 	name = {{ .fullname }}
 	email = {{ .email }}
