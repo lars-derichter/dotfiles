@@ -1,1 +1,9 @@
+# support setting java Path through /usr/libexec/java_home
+
 java_macos_integration_enable=yes
+
+# support the migration from existing version files from other
+
+# version managers like .rbenv, .nvmrc, .nodeversions
+
+legacy_version_file = yes
