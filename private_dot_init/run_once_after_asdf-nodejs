@@ -5,7 +5,7 @@ if ! asdf which nodejs &>/dev/null; then
     asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
     asdf install nodejs lts
     asdf set -u nodejs lts
-    echo "asdf java nodejs lts has been installed and set globally via asdf."
+    echo "asdf nodejs lts has been installed and set globally via asdf."
 else    
-    echo "asdf java is already installed."
+    echo "asdf nodejs is already installed."
 fi
