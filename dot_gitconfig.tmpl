@@ -1,9 +1,12 @@
 [commit]
 	gpgsign = true
-[core]
 {{- if eq .chezmoi.os "darwin" }}
+[core]
 	editor = code --wait
+[gpg]
+	program = /usr/local/bin/gpg
 {{- else if eq .chezmoi.os "linux" }}
+[core]
 	editor = nano
 {{ end }}
 	autocrlf = input
