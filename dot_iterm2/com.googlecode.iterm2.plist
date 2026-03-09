@@ -2,8 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AIFeatureFunctionCalling</key>
+	<true/>
+	<key>AIFeatureHostedCodeInterpeter</key>
+	<true/>
+	<key>AIFeatureHostedFileSearch</key>
+	<true/>
+	<key>AIFeatureHostedWebSearch</key>
+	<true/>
+	<key>AIFeatureStreamingResponses</key>
+	<true/>
+	<key>AITermAPI</key>
+	<integer>2</integer>
+	<key>AIVectorStore</key>
+	<integer>0</integer>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
+	<key>AiMaxTokens</key>
+	<integer>400000</integer>
+	<key>AiModel</key>
+	<string>gpt-5.2</string>
+	<key>AiResponseMaxTokens</key>
+	<integer>128000</integer>
+	<key>AitermURL</key>
+	<string>https://api.openai.com/v1/responses</string>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AnimateDimming</key>
@@ -1708,18 +1730,26 @@
 			<string>3FA39D9F-D223-4157-B9A4-0FE44D52E48E</string>
 			<key>Has Hotkey</key>
 			<true/>
+			<key>Height Percentage</key>
+			<integer>-1</integer>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>HotKey Activated By Modifier</key>
+			<false/>
+			<key>HotKey Alternate Shortcuts</key>
+			<array/>
 			<key>HotKey Characters</key>
 			<string>&lt;</string>
 			<key>HotKey Characters Ignoring Modifiers</key>
 			<string>&lt;</string>
 			<key>HotKey Key Code</key>
 			<integer>50</integer>
+			<key>HotKey Modifier Activation</key>
+			<integer>0</integer>
 			<key>HotKey Modifier Flags</key>
-			<integer>262401</integer>
+			<integer>262144</integer>
 			<key>HotKey Window Animates</key>
 			<true/>
 			<key>HotKey Window AutoHides</key>
@@ -1727,7 +1757,7 @@
 			<key>HotKey Window Dock Click Action</key>
 			<integer>0</integer>
 			<key>HotKey Window Floats</key>
-			<false/>
+			<true/>
 			<key>HotKey Window Reopens On Activation</key>
 			<false/>
 			<key>Idle Code</key>
@@ -1756,6 +1786,8 @@
 				<key>Red Component</key>
 				<real>0.87367779016494751</real>
 			</dict>
+			<key>Lock Window Size Automatically</key>
+			<false/>
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
@@ -1967,6 +1999,8 @@
 			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
+			<key>Width Percentage</key>
+			<integer>100</integer>
 			<key>Window Type</key>
 			<integer>2</integer>
 			<key>Working Directory</key>
