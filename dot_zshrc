@@ -76,10 +76,8 @@ DISABLE_UPDATE_PROMPT="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     alias-finder
-    asdf
     brew
     common-aliases
-    direnv
     git
     gitfast
     git-extras
@@ -121,6 +119,9 @@ export LANG=en_IE.UTF-8
 # local machine
 #prompt_context(){}
 
+# mise (https://mise.jdx.dev/)
+eval "$(mise activate zsh)"
+
 # Starship prompt (https://github.com/starship/starship)
 eval "$(starship init zsh)"
 
@@ -135,12 +136,6 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 # Dircolors
 test -r ~/.dir_colors && eval $(gdircolors -b ~/.dir_colors)
 LSCOLORS=$LS_COLORS
-
-# asdf direnv
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
-
-# asdf java
-source $HOME/.asdf/plugins/java/set-java-home.zsh
 
 # My PATH
 export PATH="$HOME/bin:$HOME/go/bin:$PATH"

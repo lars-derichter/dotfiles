@@ -1,0 +1,7 @@
+[tools]
+node = "lts"
+python = "latest"
+java = "25"
+
+[settings]
+legacy_version_file = true

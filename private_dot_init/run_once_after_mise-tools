@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if command -v mise > /dev/null 2>&1; then
+    mise install --yes
+    echo "mise tools installed successfully."
+else
+    echo "mise is not installed. Run 'brew bundle' first."
+    exit 1
+fi

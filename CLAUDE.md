@@ -52,9 +52,10 @@ config.
 - **dot_gitconfig.tmpl** — templated git config (identity, GPG signing,
   platform-specific editor)
 - **dot_oh-my-zsh/custom/** — custom shell functions, aliases, theme
-- **private_dot_init/** — nine `run_once_` scripts for machine bootstrap:
-  package installation, hostname setup, GPG/SSH agent config, asdf language
+- **private_dot_init/** — `run_once_` scripts for machine bootstrap:
+  package installation, hostname setup, GPG/SSH agent config, mise language
   runtimes (Node.js, Python, Java), macOS system preferences
+- **dot_config/mise/** — mise-en-place global config for tool version management
 - **private_dot_gnupg/** — GPG config with 1Password-sourced private key
 - **private_dot_ssh/** — SSH config with 1Password identity agent
 
