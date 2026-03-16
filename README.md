@@ -4,7 +4,8 @@ My dot files and configuration managed with [chezmoi](https://www.chezmoi.io).
 
 ## macOS
 
-On a new install first login to the App Store, install 1Password and then run these commands to initialize on macOS.
+On a new install first login to the App Store, install 1Password and then run
+these commands to initialize on macOS.
 
 ```Shell
 # Xcode command line tools
@@ -27,10 +28,14 @@ chezmoi apply
 - in 1password settings: `Use the SSH-Agent` and `Integrate with 1password-cli`
 - login to vscode (using Github) to sync settings
 - login to setapp and install favourite apps
+- Install manually:
+  - https://wordcounterapp.com/
 
 ## Project setup with mise
 
-[Mise](https://mise.jdx.dev/) manages tool versions per project. When you `cd` into a directory with a `.mise.toml`, mise automatically activates the right versions.
+[Mise](https://mise.jdx.dev/) manages tool versions per project. When you `cd`
+into a directory with a `.mise.toml`, mise automatically activates the right
+versions.
 
 Pin a tool version for the current project:
 
@@ -40,7 +45,8 @@ mise use python@3.12
 mise use java@temurin-25
 ```
 
-This creates or updates `.mise.toml` in the project root. Commit it to version control so everyone on the project uses the same versions.
+This creates or updates `.mise.toml` in the project root. Commit it to version
+control so everyone on the project uses the same versions.
 
 ### Node.js
 
@@ -80,7 +86,9 @@ python = "3.12"
 _.python.venv = { path = ".venv", create = true }
 ```
 
-Mise creates the `.venv` on first activation and activates it automatically when you enter the directory. Uses `uv venv` if [uv](https://docs.astral.sh/uv/) is installed, otherwise falls back to `python -m venv`.
+Mise creates the `.venv` on first activation and activates it automatically when
+you enter the directory. Uses `uv venv` if [uv](https://docs.astral.sh/uv/) is
+installed, otherwise falls back to `python -m venv`.
 
 ### Java
 
@@ -91,7 +99,8 @@ mise use java@corretto-25     # Amazon Corretto
 mise use java@zulu-25         # Azul Zulu
 ```
 
-Mise sets `JAVA_HOME` automatically. Also reads `.java-version` and `.sdkmanrc` files.
+Mise sets `JAVA_HOME` automatically. Also reads `.java-version` and `.sdkmanrc`
+files.
 
 Example `.mise.toml`:
 
@@ -102,7 +111,8 @@ java = "temurin-25"
 
 ### Environment variables
 
-Set project-specific environment variables in the `[env]` section of `.mise.toml`:
+Set project-specific environment variables in the `[env]` section of
+`.mise.toml`:
 
 ```toml
 [env]
@@ -137,4 +147,3 @@ _.file = ".env"
 _.path = ["./bin"]
 NODE_ENV = "development"
 ```
-
