@@ -56,6 +56,8 @@ config.
   package installation, hostname setup, GPG/SSH agent config, mise language
   runtimes (Node.js, Python, Java), macOS system preferences
 - **dot_config/mise/** — mise-en-place global config for tool version management
+- **dot_claude/** — Claude Code settings (auto-approved permissions for
+  non-destructive operations)
 - **private_dot_gnupg/** — GPG config with 1Password-sourced private key
 - **private_dot_ssh/** — SSH config with 1Password identity agent
 
