@@ -30,6 +30,7 @@ chezmoi apply
 - login to setapp and install favourite apps
 - Install manually:
   - https://wordcounterapp.com/
+  - IBM SPSS
 
 ## Project setup with mise
 
