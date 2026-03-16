@@ -38,6 +38,7 @@ cask "bambu-studio"
 cask "chitubox"
 cask "claude"
 cask "claude-code"
+cask "elegoo-slicer"
 cask "font-fira-code-nerd-font"
 cask "font-inconsolata"
 cask "font-inter"
@@ -62,10 +63,12 @@ cask "microsoft-excel"
 cask "microsoft-powerpoint"
 cask "microsoft-teams"
 cask "microsoft-word"
+cask "nrfutil"
 cask "obsidian"
 cask "onedrive"
 cask "parallels"
 cask "postman"
+cask "raspberry-pi-imager"
 cask "roon"
 cask "setapp"
 cask "steam"
@@ -74,6 +77,7 @@ cask "vlc"
 cask "whatsapp"
 
 # Mas
+mas "BetterSnapTool", id: 417375580
 mas "Kindle", id: 302584613
 mas "NordVPN", id: 905953485
 mas "Pages", id: 409201541
