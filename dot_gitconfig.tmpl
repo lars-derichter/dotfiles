@@ -7,6 +7,7 @@
 	editor = nano
 {{- end }}
 	autocrlf = input
+	pager = delta
 {{- if eq .chezmoi.os "darwin" }}
 [gpg]
 	program = {{ output "brew" "--prefix" | trim }}/bin/gpg
@@ -17,5 +18,20 @@
 	signingkey = {{ .gpg_key_id }}
 [pull]
 	rebase = false
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = ansi
+[push]
+	autoSetupRemote = true
+[rerere]
+	enabled = true
+[diff]
+	algorithm = histogram
+	colorMoved = default
+[merge]
+	conflictstyle = zdiff3
 [init]
 	defaultBranch = main
