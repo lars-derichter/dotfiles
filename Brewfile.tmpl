@@ -1,42 +1,51 @@
 # Taps
 tap "buo/cask-upgrade"
+{{ if eq .installmode "full" -}}
 tap "lars-derichter/mycasks"
+{{ end -}}
 
 # Brews
 brew "chezmoi"
 brew "coreutils"
 brew "curl"
-brew "ffmpeg"
 brew "findutils"
 brew "git"
 brew "git-extras"
 brew "git-lfs"
 brew "gnu-sed"
 brew "gnupg"
-brew "go"
-brew "hugo"
 brew "mas"
 brew "mise"
 brew "moreutils"
-brew "pandoc"
 brew "pinentry-mac"
 brew "starship"
 brew "tldr"
 brew "uv"
 brew "wget"
 brew "zsh"
+{{ if eq .installmode "full" -}}
+brew "ffmpeg"
+brew "go"
+brew "hugo"
+brew "pandoc"
+{{ end -}}
 
 # Casks
+cask "claude"
+cask "claude-code"
+cask "font-fira-code-nerd-font"
+cask "font-source-code-pro-for-powerline"
+cask "google-chrome"
+cask "iterm2"
+cask "visual-studio-code"
+{{ if eq .installmode "full" -}}
 cask "alfred"
 cask "arduino-ide"
 cask "autodesk-fusion"
 cask "bambu-connect"
 cask "bambu-studio"
 cask "chitubox"
-cask "claude"
-cask "claude-code"
 cask "elegoo-slicer"
-cask "font-fira-code-nerd-font"
 cask "font-inconsolata"
 cask "font-inter"
 cask "font-lato"
@@ -48,10 +57,7 @@ cask "font-playwrite-be-vlg"
 cask "font-playwrite-be-vlg-guides"
 cask "font-raleway"
 cask "font-roboto"
-cask "font-source-code-pro-for-powerline"
-cask "google-chrome"
 cask "imageoptim"
-cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keycastr"
 cask "lycheeslicer"
@@ -69,14 +75,16 @@ cask "raspberry-pi-imager"
 cask "roon"
 cask "setapp"
 cask "steam"
-cask "visual-studio-code"
 cask "vlc"
 cask "whatsapp"
+{{ end -}}
 
 # Mas
 mas "BetterSnapTool", id: 417375580
+{{ if eq .installmode "full" -}}
 mas "Kindle", id: 302584613
 mas "NordVPN", id: 905953485
 mas "Pages", id: 409201541
 
 go "github.com/catilac/plistwatch"
+{{ end -}}
