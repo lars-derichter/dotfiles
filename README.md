@@ -4,28 +4,34 @@ My dot files and configuration managed with [chezmoi](https://www.chezmoi.io).
 
 ## macOS
 
-On a new install first login to the App Store, install 1Password and then run
-these commands to initialize on macOS.
+1. Run these commands in the terminal:
 
-```Shell
+```shell
 # Xcode command line tools
 xcode-select --install
 
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# 1Password
+brew install 1password
+```
+
+2. Open 1Password and login
+3. In 1password:  Settings >> Developer select: `Use the SSH-Agent` and `Integrate with 1password-cli`
+4. Run these commands in the terminal:
+
+```shell
 # chezmoi
 brew install chezmoi
 chezmoi init https://github.com/lars-derichter/dotfiles.git
 
 # Check defaults in $HOME/.local/share/chezmoi/.chezmoi.toml.tmpl
 chezmoi apply
-
 ```
 
 ## Afterwards
 
-- in 1password settings: `Use the SSH-Agent` and `Integrate with 1password-cli`
 - login to vscode (using Github) to sync settings
 - login to setapp and install favourite apps
 - Install manually:
@@ -40,7 +46,7 @@ versions.
 
 Pin a tool version for the current project:
 
-```Shell
+```shell
 mise use node@20
 mise use python@3.12
 mise use java@temurin-25
@@ -51,7 +57,7 @@ control so everyone on the project uses the same versions.
 
 ### Node.js
 
-```Shell
+```shell
 mise use node@20        # pin Node 20 for this project
 ```
 
@@ -93,7 +99,7 @@ installed, otherwise falls back to `python -m venv`.
 
 ### Java
 
-```Shell
+```shell
 mise use java@25              # OpenJDK (default vendor)
 mise use java@temurin-25      # Eclipse Temurin
 mise use java@corretto-25     # Amazon Corretto
