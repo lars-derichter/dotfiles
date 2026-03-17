@@ -1,10 +1,12 @@
 #!/bin/sh
 set -e
 
+{{ if eq .chezmoi.os "darwin" -}}
 # Set the hostname using the chezmoi variable
-scutil --set HostName "{{ .preferredhostname }}"
-scutil --set LocalHostName "{{ .preferredhostname }}"
-scutil --set ComputerName "{{ .preferredhostname }}"
+sudo scutil --set HostName "{{ .preferredhostname }}"
+sudo scutil --set LocalHostName "{{ .preferredhostname }}"
+sudo scutil --set ComputerName "{{ .preferredhostname }}"
 
-# Optionally, update the /etc/hosts file
+# Update the /etc/hosts file
 sudo sed -i '' "s/^127\.0\.0\.1.*/127.0.0.1       {{ .preferredhostname }}.local {{ .preferredhostname }}/" /etc/hosts
+{{ end -}}
