@@ -4,7 +4,7 @@ My dot files and configuration managed with [chezmoi](https://www.chezmoi.io).
 
 ## macOS
 
-1. Run these commands in the terminal:
+1. run these commands in the terminal:
 
 ```shell
 # Xcode command line tools
@@ -17,9 +17,9 @@ xcode-select --install
 brew install 1password
 ```
 
-2. Open 1Password and login
-3. In 1password:  Settings >> Developer select: `Use the SSH-Agent` and `Integrate with 1password-cli`
-4. Run these commands in the terminal:
+2. open 1Password and login
+3. in 1password:  Settings >> Developer select: `Use the SSH-Agent` and `Integrate with 1password-cli`
+4. run these commands in the terminal:
 
 ```shell
 # chezmoi
@@ -32,6 +32,7 @@ chezmoi apply
 
 ## Afterwards
 
+- setup SSH-Agent in 1Password Developer settings
 - login to vscode (using Github) to sync settings
 - login to setapp and install favourite apps
 - Install manually:
