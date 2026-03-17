@@ -18,7 +18,7 @@ plugins=(
     z
 )
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 export MANPATH="/usr/local/man:$MANPATH"
@@ -53,7 +53,7 @@ fi
 {{- end }}
 
 # GPG signing
-export GPG_TTY=$(tty)
+export GPG_TTY="$(tty)"
 
 # aliasfinder
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
@@ -61,15 +61,15 @@ zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
 zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 # Dircolors
-test -r ~/.dir_colors && eval $(gdircolors -b ~/.dir_colors)
+test -r ~/.dir_colors && eval "$(gdircolors -b ~/.dir_colors)"
 LSCOLORS=$LS_COLORS
 
 # My PATH
 export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 
 # zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # zsh-syntax-highlighting — must be sourced last
 # (https://github.com/zsh-users/zsh-syntax-highlighting)
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
