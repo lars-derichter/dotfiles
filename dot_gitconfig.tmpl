@@ -1,20 +1,21 @@
 [commit]
 	gpgsign = true
-{{- if eq .chezmoi.os "darwin" }}
 [core]
+{{- if eq .chezmoi.os "darwin" }}
 	editor = code --wait
+{{- else if eq .chezmoi.os "linux" }}
+	editor = nano
+{{- end }}
+	autocrlf = input
+{{- if eq .chezmoi.os "darwin" }}
 [gpg]
 	program = {{ output "brew" "--prefix" | trim }}/bin/gpg
-{{- else if eq .chezmoi.os "linux" }}
-[core]
-	editor = nano
-{{ end }}
-	autocrlf = input
+{{- end }}
 [user]
 	name = {{ .fullname }}
 	email = {{ .email }}
-	signingkey = 306A874F98AFF064 
+	signingkey = {{ .gpg_key_id }}
 [pull]
-    rebase = false
+	rebase = false
 [init]
 	defaultBranch = main
