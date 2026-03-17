@@ -20,12 +20,7 @@ chmod g-w,o-w "$(brew --prefix)/share/zsh"
 chmod g-w,o-w "$(brew --prefix)/share/zsh/site-functions"
 
 # plistwatch
-go install  github.com/catilac/plistwatch@latest
-
-# ohmyzsh Nord Theme
-if [ ! -d "$HOME/.oh-my-zsh/themes/nord-extended" ]; then
-    git clone https://github.com/fxbrit/nord-extended $HOME/.oh-my-zsh/themes/nord-extended
-fi
+# go install  github.com/catilac/plistwatch@latest
 
 # ohmyzsh starts a new session after install
 if [ -n "$ZSH" ] && [ -d "$ZSH" ] && [ -f "$ZSH/oh-my-zsh.sh" ]; then
@@ -33,4 +28,9 @@ if [ -n "$ZSH" ] && [ -d "$ZSH" ] && [ -f "$ZSH/oh-my-zsh.sh" ]; then
 else
     echo "\n\n\nType exit when OHMyZSH starts running to complete chezmoi configuration\n\n\n"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+# ohmyzsh Nord Theme
+if [ ! -d "$HOME/.oh-my-zsh/themes/nord-extended" ]; then
+    git clone https://github.com/fxbrit/nord-extended $HOME/.oh-my-zsh/themes/nord-extended
 fi
