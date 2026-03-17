@@ -1,6 +1,5 @@
 # Taps
 tap "buo/cask-upgrade"
-tap "homebrew/bundle"
 tap "lars-derichter/mycasks"
 
 # Brews
