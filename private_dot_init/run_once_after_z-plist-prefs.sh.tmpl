@@ -42,4 +42,39 @@ defaults write "com.apple.AppleMultitouchTrackpad" "Clicking" '1' # tap to click
 defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "Clicking" '1' # tap to click
 defaults write "com.apple.dock" "showAppExposeGestureEnabled" '1' # app expose down three fingers
 
+# Finder
+defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Keyboard repeat speed
+defaults write NSGlobalDomain KeyRepeat -float 1.5
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+# Screenshots
+mkdir -p "$HOME/Screenshots"
+defaults write com.apple.screencapture location -string "$HOME/Screenshots"
+defaults write com.apple.screencapture disable-shadow -bool true
+defaults write com.apple.screencapture type -string "png"
+
+# Text Input — disable autocorrect and smart substitutions
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable "Are you sure you want to open this application?"
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# TextEdit defaults to plain text
+defaults write com.apple.TextEdit RichText -int 0
+
+# Restart affected services to apply changes
+killall Finder 2>/dev/null || true
+killall Dock 2>/dev/null || true
+killall SystemUIServer 2>/dev/null || true
+
 {{ end -}}
