@@ -8,6 +8,7 @@ plugins=(
     alias-finder
     brew
     common-aliases
+    fzf
     git
     gitfast
     git-extras
@@ -30,6 +31,10 @@ else
   export EDITOR='code --wait'
 fi
 
+# bat — cat replacement with syntax highlighting (https://github.com/sharkdp/bat)
+export BAT_THEME="ansi"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # mise (https://mise.jdx.dev/)
 eval "$(mise activate zsh)"
 
@@ -39,6 +44,12 @@ eval "$(starship init zsh)"
 {{- if eq .chezmoi.os "darwin" }}
 # 1Password SSH-agent
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+# 1Password CLI completions
+if command -v op &>/dev/null; then
+  eval "$(op completion zsh)"
+  compdef _op op
+fi
 {{- end }}
 
 # GPG signing
@@ -55,3 +66,10 @@ LSCOLORS=$LS_COLORS
 
 # My PATH
 export PATH="$HOME/bin:$HOME/go/bin:$PATH"
+
+# zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-syntax-highlighting — must be sourced last
+# (https://github.com/zsh-users/zsh-syntax-highlighting)
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
