@@ -7,6 +7,8 @@ sudo scutil --set HostName "{{ .preferredhostname }}"
 sudo scutil --set LocalHostName "{{ .preferredhostname }}"
 sudo scutil --set ComputerName "{{ .preferredhostname }}"
 
-# Update the /etc/hosts file
-sudo sed -i '' "s/^127\.0\.0\.1.*/127.0.0.1       {{ .preferredhostname }}.local {{ .preferredhostname }}/" /etc/hosts
+# Add hostname entry to /etc/hosts (preserve existing localhost line)
+if ! grep -q "{{ .preferredhostname }}" /etc/hosts; then
+    echo "127.0.0.1       {{ .preferredhostname }}.local {{ .preferredhostname }}" | sudo tee -a /etc/hosts > /dev/null
+fi
 {{ end -}}
