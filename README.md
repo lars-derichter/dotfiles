@@ -17,7 +17,8 @@ brew install 1password
 2. open 1Password and login
 3. in 1Password:  Settings >> Developer select: `Use the SSH-Agent` and
    `Integrate with 1password-cli`
-4. run these commands in the terminal:
+4. login in App Store
+5. run these commands in the terminal:
 
 ```shell
 # chezmoi
