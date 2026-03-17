@@ -7,4 +7,5 @@ else
     echo "installing mise"
     brew install mise
     mise install --yes
+    echo "mise tools installed successfully."
 fi
