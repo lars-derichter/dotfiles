@@ -11,65 +11,79 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.iterm2"
 defaults write "com.googlecode.iterm2" "LoadPrefsFromCustomFolder" '1'
 
 # Theme: Auto (instead of light)
-defaults write "Apple Global Domain" "AppleInterfaceStyleSwitchesAutomatically" '1'
+defaults write "Apple Global Domain" "AppleInterfaceStyleSwitchesAutomatically" '1' # default: 0
 
 # Dock
-defaults write "com.apple.dock" "largesize" '60'
-defaults write "com.apple.dock" "magnification" '2'
-defaults write "com.apple.dock" "autohide" '1'
-defaults write "com.apple.dock" "expose-group-apps" '1'
+defaults write "com.apple.dock" "largesize" '60' # default: 64
+defaults write "com.apple.dock" "magnification" '2' # default: 0
+defaults write "com.apple.dock" "autohide" '1' # default: 0
+defaults write "com.apple.dock" "expose-group-apps" '1' # default: 0
 
 # Hot Corners
-defaults write "com.apple.dock" "wvous-tl-corner" '4' # desktop
-defaults write "com.apple.dock" "wvous-tl-modifier" '0'
+defaults write "com.apple.dock" "wvous-tl-corner" '4' # desktop; default: 1 (none)
+defaults write "com.apple.dock" "wvous-tl-modifier" '0' # default: 0
 
-defaults write "com.apple.dock" "wvous-tr-corner" '2' # mission control
-defaults write "com.apple.dock" "wvous-tr-modifier" '0'
+defaults write "com.apple.dock" "wvous-tr-corner" '2' # mission control; default: 1 (none)
+defaults write "com.apple.dock" "wvous-tr-modifier" '0' # default: 0
 
-defaults write "com.apple.dock" "wvous-bl-corner" '13' # lock screen
-defaults write "com.apple.dock" "wvous-bl-modifier" '0'
+defaults write "com.apple.dock" "wvous-bl-corner" '13' # lock screen; default: 1 (none)
+defaults write "com.apple.dock" "wvous-bl-modifier" '0' # default: 0
 
-defaults write "com.apple.dock" "wvous-br-corner" '3' # Application windows
-defaults write "com.apple.dock" "wvous-br-modifier" '0'
+defaults write "com.apple.dock" "wvous-br-corner" '3' # Application windows; default: 1 (none)
+defaults write "com.apple.dock" "wvous-br-modifier" '0' # default: 0
 
 # fn key shows emoji keyboard
-defaults write "com.apple.HIToolbox" "AppleFnUsageType" '2'
+defaults write "com.apple.HIToolbox" "AppleFnUsageType" '2' # default: 0 (do nothing)
 
 # trackpad
-defaults write "Apple Global Domain" "com.apple.trackpad.scaling" '1.5' # faster
-defaults write "com.apple.AppleMultitouchTrackpad" "Clicking" '1' # tap to click
-defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "Clicking" '1' # tap to click
-defaults write "com.apple.dock" "showAppExposeGestureEnabled" '1' # app expose down three fingers
+defaults write "Apple Global Domain" "com.apple.trackpad.scaling" '1.5' # faster; default: 1.0
+defaults write "com.apple.AppleMultitouchTrackpad" "Clicking" '1' # tap to click; default: 0
+defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "Clicking" '1' # tap to click; default: 0
+defaults write "com.apple.dock" "showAppExposeGestureEnabled" '1' # app expose down three fingers; default: 0
 
 # Finder
-defaults write com.apple.finder AppleShowAllFiles -bool true
-defaults write com.apple.finder ShowPathbar -bool true
-defaults write com.apple.finder ShowStatusBar -bool true
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-defaults write com.apple.finder _FXSortFoldersFirst -bool true
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true # default: false
+defaults write com.apple.finder ShowPathbar -bool true # default: false
+defaults write com.apple.finder ShowStatusBar -bool true # default: false
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf" # default: SCsp (search this Mac)
+defaults write com.apple.finder _FXSortFoldersFirst -bool true # default: false
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false # default: true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true # default: false
 
 # Keyboard repeat speed
-defaults write NSGlobalDomain KeyRepeat -float 1.5
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain KeyRepeat -float 1.5 # default: 6
+defaults write NSGlobalDomain InitialKeyRepeat -int 15 # default: 25
 
 # Screenshots
 mkdir -p "$HOME/Screenshots"
-defaults write com.apple.screencapture location -string "$HOME/Screenshots"
-defaults write com.apple.screencapture disable-shadow -bool true
-defaults write com.apple.screencapture type -string "png"
+defaults write com.apple.screencapture location -string "$HOME/Screenshots" # default: ~/Desktop
+defaults write com.apple.screencapture disable-shadow -bool true # default: false
+defaults write com.apple.screencapture type -string "png" # default: png
 
 # Text Input — disable autocorrect and smart substitutions
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false # default: true
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false # default: true
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false # default: true
 
 # Disable "Are you sure you want to open this application?"
-defaults write com.apple.LaunchServices LSQuarantine -bool false
+defaults write com.apple.LaunchServices LSQuarantine -bool false # default: true
 
 # TextEdit defaults to plain text
-defaults write com.apple.TextEdit RichText -int 0
+defaults write com.apple.TextEdit RichText -int 0 # default: 1
+
+# Performance — reduce animations and visual effects
+defaults write com.apple.dock autohide-delay -float 0 # default: 0.5
+defaults write com.apple.dock autohide-time-modifier -float 0.2 # default: 0.7
+defaults write com.apple.dock expose-animation-duration -float 0.15 # default: 0.7
+defaults write com.apple.dock springboard-show-duration -float 0.1 # default: 0.3
+defaults write com.apple.dock springboard-hide-duration -float 0.1 # default: 0.3
+defaults write com.apple.dock minimize-to-application -bool true # default: false
+defaults write com.apple.dock mineffect -string scale # default: genie
+defaults write com.apple.dock launchanim -bool false # default: true
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 # default: 0.2
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false # default: true
+defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false # default: true
+defaults write com.apple.universalaccess reduceTransparency -bool true # default: false
 
 # Restart affected services to apply changes
 killall Finder 2>/dev/null || true
