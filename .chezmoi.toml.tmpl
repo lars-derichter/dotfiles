@@ -1,10 +1,12 @@
 {{- $preferredhostname := promptString "What should be the hostname for this system?" -}}
 {{- $fullname := promptString "What is your full name" -}}
 {{- $email := promptString "What is your email address" -}}
+{{- $installmode := promptString "Installation mode (minimal/full)" -}}
 [data]
 	preferredhostname = "{{ $preferredhostname }}"
 	fullname = "{{ $fullname }}"
 	email = "{{ $email }}"
+	installmode = "{{ $installmode }}"
 	gpg_key_id = "306A874F98AFF064"
 	gpg_key_op_id = "soharkziyvetleqovjby4d74wy"
 
