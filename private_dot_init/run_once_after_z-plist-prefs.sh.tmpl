@@ -18,7 +18,7 @@ defaults write "com.runningwithcrayons.Alfred-Preferences" "syncPrefs" -bool tru
 defaults write "Apple Global Domain" "AppleInterfaceStyleSwitchesAutomatically" -bool true # default: false
 
 # Dock
-defaults write "com.apple.dock" "largesize" -int 60 # default: 64
+defaults write "com.apple.dock" "largesize" -int 65 # default: 64
 defaults write "com.apple.dock" "magnification" -bool true # default: false
 defaults write "com.apple.dock" "autohide" -bool true # default: false
 defaults write "com.apple.dock" "expose-group-apps" -bool true # default: false
@@ -78,11 +78,11 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false # default: true
 defaults write com.apple.TextEdit RichText -int 0 # default: 1
 
 # Performance — reduce animations and visual effects
-defaults write com.apple.dock autohide-delay -float 0.5 # default: 0.5
-defaults write com.apple.dock autohide-time-modifier -float 0.7 # default: 0.7
-defaults write com.apple.dock expose-animation-duration -float 0.7 # default: 0.7
-defaults write com.apple.dock springboard-show-duration -float 0.3 # default: 0.3
-defaults write com.apple.dock springboard-hide-duration -float 0.3 # default: 0.3
+defaults write com.apple.dock autohide-delay -float 0.4 # default: 0.5
+defaults write com.apple.dock autohide-time-modifier -float 0.5 # default: 0.7
+defaults write com.apple.dock expose-animation-duration -float 0.5 # default: 0.7
+defaults write com.apple.dock springboard-show-duration -float 0.2 # default: 0.3
+defaults write com.apple.dock springboard-hide-duration -float 0.2 # default: 0.3
 defaults write com.apple.dock minimize-to-application -bool false # default: false
 defaults write com.apple.dock mineffect -string "genie" # default: genie
 defaults write com.apple.dock launchanim -bool false # default: true
