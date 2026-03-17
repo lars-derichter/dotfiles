@@ -4,7 +4,7 @@
 [core]
 	editor = code --wait
 [gpg]
-	program = /usr/local/bin/gpg
+	program = {{ output "brew" "--prefix" | trim }}/bin/gpg
 {{- else if eq .chezmoi.os "linux" }}
 [core]
 	editor = nano
