@@ -11,27 +11,35 @@ if ! command -v brew &>/dev/null; then
     echo "Homebrew installed."
 fi
 
-# Install packages from Brewfile
+# Install packages from Brewfile (non-fatal: log failures but continue)
 if [ -f "$HOME/Brewfile" ]; then
+    set +e
     brew bundle --file="$HOME/Brewfile"
+    BREW_EXIT=$?
+    set -e
+    if [ $BREW_EXIT -ne 0 ]; then
+        echo "WARNING: brew bundle finished with errors (exit code $BREW_EXIT)."
+        echo "Some packages may not have been installed. Check output above."
+        echo "You can re-run 'brew bundle --file=~/Brewfile' after fixing issues."
+    fi
 fi
 
 # fix privileges for zsh completions
-chmod g-w,o-w "$(brew --prefix)/share/zsh"
-chmod g-w,o-w "$(brew --prefix)/share/zsh/site-functions"
+ZSH_SHARE="$(brew --prefix)/share/zsh"
+[ -d "$ZSH_SHARE" ] && chmod g-w,o-w "$ZSH_SHARE"
+[ -d "$ZSH_SHARE/site-functions" ] && chmod g-w,o-w "$ZSH_SHARE/site-functions"
 
-
-# ohmyzsh starts a new session after install
+# ohmyzsh
 if [ -n "$ZSH" ] && [ -d "$ZSH" ] && [ -f "$ZSH/oh-my-zsh.sh" ]; then
     echo "OhMyZSH is already installed"
 else
     rm -rf "$HOME/.oh-my-zsh" # does not install if ~/.oh-my-zsh is found
-    echo "\n\n\nType exit when OHMyZSH starts running to complete chezmoi configuration\n\n\n"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    cp -r "$HOME/.local/share/chezmoi/dot_oh-my-zsh/"* "$HOME/.oh-my-zsh" # re-copy ~/.oh-my-zsh files
+    RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    # re-copy custom oh-my-zsh files (installer overwrites what chezmoi deployed)
+    cp -r "$HOME/.local/share/chezmoi/dot_oh-my-zsh/"* "$HOME/.oh-my-zsh"
 fi
 
 # ohmyzsh Nord Theme
 if [ ! -d "$HOME/.oh-my-zsh/themes/nord-extended" ]; then
-    git clone https://github.com/fxbrit/nord-extended $HOME/.oh-my-zsh/themes/nord-extended
+    git clone https://github.com/fxbrit/nord-extended "$HOME/.oh-my-zsh/themes/nord-extended"
 fi
