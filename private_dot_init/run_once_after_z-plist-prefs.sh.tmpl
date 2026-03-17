@@ -3,43 +3,49 @@
 {{ if eq .chezmoi.os "darwin" -}}
 
 # computername
-defaults write "com.apple.rapport" "familySyncedName" '{{ .preferredhostname }}'
+defaults write "com.apple.rapport" "familySyncedName" -string '{{ .preferredhostname }}'
 
 # iterm settings from ~/.iterm2
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.iterm2"
+defaults write "com.googlecode.iterm2" "PrefsCustomFolder" -string "$HOME/.iterm2"
 # read them
-defaults write "com.googlecode.iterm2" "LoadPrefsFromCustomFolder" '1'
+defaults write "com.googlecode.iterm2" "LoadPrefsFromCustomFolder" -bool true
+
+# alfred settings from ~/.alfred
+defaults write "com.runningwithcrayons.Alfred-Preferences" "syncfolder" -string "$HOME/.alfred"
+defaults write "com.runningwithcrayons.Alfred-Preferences" "syncPrefs" -bool true
 
 # Theme: Auto (instead of light)
-defaults write "Apple Global Domain" "AppleInterfaceStyleSwitchesAutomatically" '1' # default: 0
+defaults write "Apple Global Domain" "AppleInterfaceStyleSwitchesAutomatically" -bool true # default: false
 
 # Dock
-defaults write "com.apple.dock" "largesize" '60' # default: 64
-defaults write "com.apple.dock" "magnification" '2' # default: 0
-defaults write "com.apple.dock" "autohide" '1' # default: 0
-defaults write "com.apple.dock" "expose-group-apps" '1' # default: 0
+defaults write "com.apple.dock" "largesize" -int 60 # default: 64
+defaults write "com.apple.dock" "magnification" -bool true # default: false
+defaults write "com.apple.dock" "autohide" -bool true # default: false
+defaults write "com.apple.dock" "expose-group-apps" -bool true # default: false
 
 # Hot Corners
-defaults write "com.apple.dock" "wvous-tl-corner" '4' # desktop; default: 1 (none)
-defaults write "com.apple.dock" "wvous-tl-modifier" '0' # default: 0
+defaults write "com.apple.dock" "wvous-tl-corner" -int 4 # desktop; default: 1 (none)
+defaults write "com.apple.dock" "wvous-tl-modifier" -int 0 # default: 0
 
-defaults write "com.apple.dock" "wvous-tr-corner" '2' # mission control; default: 1 (none)
-defaults write "com.apple.dock" "wvous-tr-modifier" '0' # default: 0
+defaults write "com.apple.dock" "wvous-tr-corner" -int 2 # mission control; default: 1 (none)
+defaults write "com.apple.dock" "wvous-tr-modifier" -int 0 # default: 0
 
-defaults write "com.apple.dock" "wvous-bl-corner" '13' # lock screen; default: 1 (none)
-defaults write "com.apple.dock" "wvous-bl-modifier" '0' # default: 0
+defaults write "com.apple.dock" "wvous-bl-corner" -int 13 # lock screen; default: 1 (none)
+defaults write "com.apple.dock" "wvous-bl-modifier" -int 0 # default: 0
 
-defaults write "com.apple.dock" "wvous-br-corner" '3' # Application windows; default: 1 (none)
-defaults write "com.apple.dock" "wvous-br-modifier" '0' # default: 0
+defaults write "com.apple.dock" "wvous-br-corner" -int 3 # Application windows; default: 1 (none)
+defaults write "com.apple.dock" "wvous-br-modifier" -int 0 # default: 0
 
 # fn key shows emoji keyboard
-defaults write "com.apple.HIToolbox" "AppleFnUsageType" '2' # default: 0 (do nothing)
+defaults write "com.apple.HIToolbox" "AppleFnUsageType" -int 2 # default: 0 (do nothing)
 
 # trackpad
-defaults write "Apple Global Domain" "com.apple.trackpad.scaling" '1.5' # faster; default: 1.0
-defaults write "com.apple.AppleMultitouchTrackpad" "Clicking" '1' # tap to click; default: 0
-defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "Clicking" '1' # tap to click; default: 0
-defaults write "com.apple.dock" "showAppExposeGestureEnabled" '1' # app expose down three fingers; default: 0
+defaults write "Apple Global Domain" "com.apple.trackpad.scaling" -float 1.5 # faster; default: 1.0
+defaults write "com.apple.AppleMultitouchTrackpad" "Clicking" -bool true # tap to click; default: false
+defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "Clicking" -bool true # tap to click; default: false
+defaults write "com.apple.AppleMultitouchTrackpad" "TrackpadRightClick" -bool true # two finger tap right click; default: true
+defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "TrackpadRightClick" -bool true # two finger tap right click; default: true
+defaults write "com.apple.dock" "showAppExposeGestureEnabled" -bool true # app expose down three fingers; default: false
 
 # Finder
 defaults write com.apple.finder AppleShowAllFiles -bool true # default: false
@@ -51,7 +57,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false # def
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true # default: false
 
 # Keyboard repeat speed
-defaults write NSGlobalDomain KeyRepeat -float 1.5 # default: 6
+defaults write NSGlobalDomain KeyRepeat -float 3 # default: 6
 defaults write NSGlobalDomain InitialKeyRepeat -int 15 # default: 25
 
 # Screenshots
@@ -72,17 +78,17 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false # default: true
 defaults write com.apple.TextEdit RichText -int 0 # default: 1
 
 # Performance — reduce animations and visual effects
-defaults write com.apple.dock autohide-delay -float 0 # default: 0.5
-defaults write com.apple.dock autohide-time-modifier -float 0.2 # default: 0.7
-defaults write com.apple.dock expose-animation-duration -float 0.15 # default: 0.7
-defaults write com.apple.dock springboard-show-duration -float 0.1 # default: 0.3
-defaults write com.apple.dock springboard-hide-duration -float 0.1 # default: 0.3
-defaults write com.apple.dock minimize-to-application -bool true # default: false
-defaults write com.apple.dock mineffect -string scale # default: genie
+defaults write com.apple.dock autohide-delay -float 0.5 # default: 0.5
+defaults write com.apple.dock autohide-time-modifier -float 0.7 # default: 0.7
+defaults write com.apple.dock expose-animation-duration -float 0.7 # default: 0.7
+defaults write com.apple.dock springboard-show-duration -float 0.3 # default: 0.3
+defaults write com.apple.dock springboard-hide-duration -float 0.3 # default: 0.3
+defaults write com.apple.dock minimize-to-application -bool false # default: false
+defaults write com.apple.dock mineffect -string "genie" # default: genie
 defaults write com.apple.dock launchanim -bool false # default: true
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.1 # default: 0.2
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false # default: true
-defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false # default: true
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.2 # default: 0.2
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool true # default: true
+defaults write NSGlobalDomain NSScrollAnimationEnabled -bool true # default: true
 defaults write com.apple.universalaccess reduceTransparency -bool true # default: false
 
 # Restart affected services to apply changes
