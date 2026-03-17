@@ -1,12 +1,7 @@
-{{ if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 set -e
-#ssh-add -K ~/.ssh/id_rsa
-echo "Install 1password SSH-agent"
 
-{{ else if eq .chezmoi.os "linux" -}}
-#!/bin/sh
-set -e
+{{ if eq .chezmoi.os "linux" -}}
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 {{ end -}}
