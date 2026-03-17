@@ -6,5 +6,9 @@ if ! command -v mise > /dev/null 2>&1; then
     brew install mise
 fi
 
-mise install --yes
-echo "mise tools installed successfully."
+if mise install --yes; then
+    echo "mise tools installed successfully."
+else
+    echo "WARNING: some mise tools failed to install."
+    echo "You can re-run 'mise install' after fixing issues."
+fi
