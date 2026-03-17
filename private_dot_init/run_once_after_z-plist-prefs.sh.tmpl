@@ -7,7 +7,7 @@ set -e
 defaults write "com.apple.rapport" "familySyncedName" '{{ .preferredhostname }}'
 
 # iterm settings from ~/.iterm2
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.iterm2"
 # read them
 defaults write "com.googlecode.iterm2" "LoadPrefsFromCustomFolder" '1'
 
@@ -37,7 +37,7 @@ defaults write "com.apple.dock" "wvous-br-modifier" '0'
 defaults write "com.apple.HIToolbox" "AppleFnUsageType" '2'
 
 # trackpad
-defaults write "Apple Global Domain" "com.apple.trackpad.scaling" '"1.5"' # faster
+defaults write "Apple Global Domain" "com.apple.trackpad.scaling" '1.5' # faster
 defaults write "com.apple.AppleMultitouchTrackpad" "Clicking" '1' # tap to click
 defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "Clicking" '1' # tap to click
 defaults write "com.apple.dock" "showAppExposeGestureEnabled" '1' # app expose down three fingers
