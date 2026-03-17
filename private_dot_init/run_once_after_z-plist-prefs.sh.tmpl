@@ -4,8 +4,7 @@ set -e
 {{ if eq .chezmoi.os "darwin" -}}
 
 # computername
-#[TODO: use template]
-defaults write "com.apple.rapport" "familySyncedName" 'Olorin'
+defaults write "com.apple.rapport" "familySyncedName" '{{ .preferredhostname }}'
 
 # iterm settings from ~/.iterm2
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
