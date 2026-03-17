@@ -1,12 +1,10 @@
 #!/bin/sh
 set -e
 
-if command -v mise > /dev/null 2>&1; then
-    mise install --yes
-    echo "mise tools installed successfully."
-else
+if ! command -v mise > /dev/null 2>&1; then
     echo "installing mise"
     brew install mise
-    mise install --yes
-    echo "mise tools installed successfully."
 fi
+
+mise install --yes
+echo "mise tools installed successfully."
