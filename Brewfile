@@ -28,8 +28,6 @@ brew "wget"
 brew "zsh"
 
 # Casks
-cask "1password"
-cask "1password-cli"
 cask "alfred"
 cask "arduino-ide"
 cask "autodesk-fusion"
