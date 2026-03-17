@@ -2,13 +2,15 @@
 {{- $fullname := promptString "What is your full name" -}}
 {{- $email := promptString "What is your email address" -}}
 {{- $installmode := promptString "Installation mode (minimal/full)" -}}
+{{- $gpg_key_id := promptStringOnce . "gpg_key_id" "GPG key ID" "306A874F98AFF064" -}}
+{{- $gpg_key_op_id := promptStringOnce . "gpg_key_op_id" "1Password item ID for GPG private key" "soharkziyvetleqovjby4d74wy" -}}
 [data]
 	preferredhostname = "{{ $preferredhostname }}"
 	fullname = "{{ $fullname }}"
 	email = "{{ $email }}"
 	installmode = "{{ $installmode }}"
-	gpg_key_id = "306A874F98AFF064"
-	gpg_key_op_id = "soharkziyvetleqovjby4d74wy"
+	gpg_key_id = "{{ $gpg_key_id }}"
+	gpg_key_op_id = "{{ $gpg_key_op_id }}"
 
 [hooks.read-source-state.pre]
     command = ".local/share/chezmoi/.install-password-manager.sh"
