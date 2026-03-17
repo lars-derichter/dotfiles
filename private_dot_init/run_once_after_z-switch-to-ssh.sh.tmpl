@@ -1,0 +1,15 @@
+#!/bin/sh
+
+{{ if eq .chezmoi.os "darwin" -}}
+# Switch chezmoi remote from HTTPS to SSH now that 1Password SSH agent is configured
+CHEZMOI_DIR="$HOME/.local/share/chezmoi"
+CURRENT_URL="$(git -C "$CHEZMOI_DIR" remote get-url origin 2>/dev/null)"
+
+if echo "$CURRENT_URL" | grep -q "^https://github.com/"; then
+    SSH_URL="$(echo "$CURRENT_URL" | sed 's|^https://github.com/|git@github.com:|')"
+    git -C "$CHEZMOI_DIR" remote set-url origin "$SSH_URL"
+    echo "Switched chezmoi remote to SSH: $SSH_URL"
+else
+    echo "Chezmoi remote already using SSH or non-GitHub URL: $CURRENT_URL"
+fi
+{{- end }}
