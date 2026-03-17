@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # Set the hostname using the chezmoi variable
 scutil --set HostName "{{ .preferredhostname }}"
