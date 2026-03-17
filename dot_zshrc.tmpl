@@ -36,8 +36,10 @@ eval "$(mise activate zsh)"
 # Starship prompt (https://github.com/starship/starship)
 eval "$(starship init zsh)"
 
+{{- if eq .chezmoi.os "darwin" }}
 # 1Password SSH-agent
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+{{- end }}
 
 # aliasfinder
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
