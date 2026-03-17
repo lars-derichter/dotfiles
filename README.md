@@ -7,9 +7,6 @@ My dot files and configuration managed with [chezmoi](https://www.chezmoi.io).
 1. run these commands in the terminal:
 
 ```shell
-# Xcode command line tools
-xcode-select --install
-
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
