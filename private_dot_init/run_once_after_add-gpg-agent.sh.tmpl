@@ -5,14 +5,13 @@ set -e
 # Function to install a package if it's not installed
 install_if_missing() {
     local package=$1
-    if ! command -v $package &>/dev/null; then
+    if ! command -v "$package" &>/dev/null; then
         echo "$package is not installed. Installing..."
-        brew install $package
+        brew install "$package"
     else
         echo "$package is already installed."
     fi
 }
-{{- end }}
 
 # Ensure gnupg is installed
 install_if_missing "gpg"
@@ -27,3 +26,4 @@ echo "\nCheck if key is shown with ultimate trust and correct identity"
 # (re)start gpg-agent
 killall gpg-agent || true
 gpg-agent --daemon
+{{- end }}
