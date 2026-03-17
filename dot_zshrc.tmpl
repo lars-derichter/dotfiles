@@ -41,6 +41,9 @@ eval "$(starship init zsh)"
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 {{- end }}
 
+# GPG signing
+export GPG_TTY=$(tty)
+
 # aliasfinder
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
